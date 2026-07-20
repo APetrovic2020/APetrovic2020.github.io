@@ -51,20 +51,22 @@ button {
 function abrirAplicacion() {
     window.location.href = "midiario://";
 }
+  
 
 window.onload = () => {
-
+    var x = document.getElementById("butOpen");
     const esMovil =
         /Android|iPhone|iPad|iPod/i.test(
             navigator.userAgent
         );
 
     if (esMovil) {
-
         setTimeout(() => {
             abrirAplicacion();
         }, 1000);
 
+    } else  {
+        x.style.display = "none";
     }
 
 };
@@ -92,7 +94,7 @@ Su correo electrónico fue validado correctamente.
 Ahora puede comenzar a utilizar la aplicación.
 </p>
 
-<button onclick="abrirAplicacion()">
+<button id="butOpen" onclick="abrirAplicacion()">
 Abrir Mi Diario
 </button>
 
