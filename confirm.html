@@ -1,10 +1,97 @@
-<!DOCTYPE html>
-<html>
+<title>Mi Diario</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F8FAFC;
+    color: #1E293B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.card {
+    max-width: 420px;
+    padding: 32px;
+}
+
+.logo {
+    font-size: 72px;
+}
+
+h1 {
+    color: #208AEF;
+    margin-top: 12px;
+}
+
+p {
+    line-height: 1.5;
+    color: #475569;
+}
+
+button {
+    margin-top: 24px;
+    background: #208AEF;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+
+function abrirAplicacion() {
+    window.location.href = "midiario://";
+}
+
+window.onload = () => {
+
+    const esMovil =
+        /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent
+        );
+
+    if (esMovil) {
+
+        setTimeout(() => {
+            abrirAplicacion();
+        }, 1000);
+
+    }
+
+};
+
+</script>
+
+</head>
+
 <body>
 
-<h1>Confirmación</h1>
-<p>Bienvenido a Mi Diario. Su correo ha sido validado exitosamente.</p>
-<p>Puede cerrar esta ventana.</p>
+<div class="card">
+
+<div class="logo">💧</div>
+
+<h1>Mi Diario</h1>
+
+<p>
+Su correo electrónico fue validado correctamente.
+</p>
+
+<p>
+Ahora puede comenzar a utilizar la aplicación.
+</p>
+
+<button onclick="abrirAplicacion()">
+Abrir Mi Diario
+</button>
+
+</div>
 
 </body>
 </html>
