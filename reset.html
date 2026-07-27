@@ -9,7 +9,10 @@
 
 window.onload=function(){
 
-    window.location.href="midiario://reset-password";
+    const query = window.location.search;
+    const hash = window.location.hash;
+    
+    window.location.href = "midiario://reset-password" + query + hash;
 
 };
 
