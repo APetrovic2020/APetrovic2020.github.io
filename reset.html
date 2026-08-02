@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mi Diario - Nueva contraseña</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
@@ -109,15 +110,26 @@ id="confirm"
 placeholder="Confirmar contraseña">
 
 <button id="changePassword">
-Cambiar contraseña
+    Cambiar contraseña
 </button>
 
-<div
-class="message"
-id="message">
+<div class="message" id="message">
 </div>
 
 </div>
+
+<script>
+
+const supabaseUrl = "https://bslmzjleijdwjgxwwktu.supabase.co";
+
+const supabaseAnonKey = "sb_publishable_BuNMHFQ71oidIwZ_bJChbA_NdeqzRPb";
+
+const supabase = window.supabase.createClient(
+  supabaseUrl,
+  supabaseAnonKey
+);
+
+</script>
 
 </body>
 
