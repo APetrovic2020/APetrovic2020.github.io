@@ -125,25 +125,40 @@ placeholder="Confirmar contraseña">
 <script>
 
 const supabaseUrl = "https://bslmzjleijdwjgxwwktu.supabase.co";
-
 const supabaseAnonKey = "sb_publishable_BuNMHFQ71oidIwZ_bJChbA_NdeqzRPb";
-
 const supabaseClient = window.supabase.createClient(
   supabaseUrl,
   supabaseAnonKey
 );
 
-const fragment = window.location.hash.substring(1);
+async function init() {
+    const fragment = window.location.hash.substring(1);
+    const params = new URLSearchParams(fragment);
+    const accessToken = params.get("access_token");
+    const refreshToken = params.get("refresh_token");
+    console.log('!!!!!!!acces=' + accessToken);
+    console.log('!!!!!!!refresh=' + refreshToken);
 
-const params = new URLSearchParams(fragment);
+    if (accessToken && refreshToken) {
 
-const accessToken = params.get("access_token");
+        const { error } =
+            await supabaseClient.auth.setSession({
+                access_token: accessToken,
+                refresh_token: refreshToken,
+            });
+    
+        if (error) {
+            console.error(error);
+            document.getElementById("message").innerText =
+                error.message;
+            return;
+        }
 
-const refreshToken = params.get("refresh_token");
+        document.getElementById("message").innerText = "Sesión restaurada correctamente.";
+    }
+}
 
-console.log('!!!!!!!acces=' + accessToken);
-
-console.log('!!!!!!!refresh=' + refreshToken);
+init();
 
 </script>
 
