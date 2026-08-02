@@ -1,33 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<title>Mi Diario - Nueva contraseña</title>
 
-window.onload = function () {
+<style>
 
-    //window.location.href = "midiario://reset-password" + window.location.hash;
-    //window.location.href="midiario://reset-password";
-    
-    const hash = window.location.hash.substring(1);
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#E6F4FE;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-    window.location.href = "midiario://reset-password?" + hash;
+.card{
+    width:360px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+    text-align:center;
+}
 
-     
+.logo{
+    font-size:60px;
+    margin-bottom:10px;
+}
 
-};
+h1{
+    color:#208AEF;
+    margin-top:0;
+    margin-bottom:10px;
+}
 
-</script>
+.subtitle{
+    color:#64748B;
+    margin-bottom:30px;
+    line-height:1.5;
+}
+
+input{
+    width:100%;
+    box-sizing:border-box;
+    padding:14px;
+    margin-bottom:16px;
+    border:1px solid #D6E8F7;
+    border-radius:12px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#208AEF;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#208AEF;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1978D6;
+}
+
+.message{
+    margin-top:20px;
+    color:#16A34A;
+    font-weight:bold;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h2>5.Abriendo Mi Diario...</h2>
+<div class="card">
 
-<p>Si la aplicación no se abre automáticamente, vuelva al correo e intente nuevamente.</p>
+<div class="logo">💧</div>
+
+<h1>Mi Diario</h1>
+
+<div class="subtitle">
+Ingrese su nueva contraseña.
+</div>
+
+<input
+type="password"
+id="password"
+placeholder="Nueva contraseña">
+
+<input
+type="password"
+id="confirm"
+placeholder="Confirmar contraseña">
+
+<button id="changePassword">
+Cambiar contraseña
+</button>
+
+<div
+class="message"
+id="message">
+</div>
+
+</div>
 
 </body>
 
