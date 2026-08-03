@@ -79,6 +79,17 @@ h1{
 }
 
 </style>
+
+<script>
+    function copyMail() {
+        navigator.clipboard.writeText(
+        "contacto@midiario.site"
+        );
+
+        alert("Correo copiado al portapapeles.");
+    }
+</script>
+
 </head>
 
 <body>
@@ -138,7 +149,7 @@ Contacto
     </a>
     &nbsp; · &nbsp;
 
-    <a href="mailto:contacto@midiario.site">
+    <a href="#" onclick="copyMail()">
         Contacto
     </a>
 </div>
