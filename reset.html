@@ -97,7 +97,7 @@ button:hover{
     alt="Mi Diario"
     class="logo">
 
-<h1>2 Mi Diario</h1> 
+<h1>3 Mi Diario</h1> 
 
 <div class="subtitle">
 Ingrese su nueva contraseña.
@@ -115,6 +115,10 @@ placeholder="Confirmar contraseña">
 
 <button id="changePassword">
     Cambiar contraseña
+</button>
+
+<button id="abrirApp" style.display = "none">
+    Abrir Mi Diario
 </button>
 
 <div class="message" id="message">
@@ -170,20 +174,8 @@ async function changePassword() {
     document.querySelector(".subtitle").style.display = "none";
     
     message.style.color = "#16A34A";
-
-    message.innerHTML = '<h2>Contraseña actualizada</h2>
-        <p>
-        Su contraseña fue cambiada correctamente.
-        </p>
-        
-        <p>
-        Ya puede volver a <b>Mi Diario</b> e iniciar sesión.
-        </p>'
-    ;
-
-    message.innerHTML += "<br><br>
-    <button id=\"openApp\">Abrir Mi Diario</button>"
-    ;
+    message.innerText = "Su contraseña fue cambiada correctamente.";
+    document.getElementById("abrirApp").style.display = "";
 
 }
 
