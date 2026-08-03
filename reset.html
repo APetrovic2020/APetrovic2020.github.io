@@ -97,7 +97,7 @@ button:hover{
     alt="Mi Diario"
     class="logo">
 
-<h1>3 Mi Diario</h1> 
+<h1>4 Mi Diario</h1> 
 
 <div class="subtitle">
 Ingrese su nueva contraseña.
@@ -117,7 +117,7 @@ placeholder="Confirmar contraseña">
     Cambiar contraseña
 </button>
 
-<button id="abrirApp" style.display = "none">
+<button id="abrirApp">
     Abrir Mi Diario
 </button>
 
@@ -204,6 +204,8 @@ async function init() {
         //document.getElementById("message").innerText = "Sesión restaurada correctamente.";
     }
 }
+
+document.getElementById("abrirApp").style.display = "none";
 
 document.getElementById("changePassword").addEventListener(
         "click",
