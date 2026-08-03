@@ -142,7 +142,7 @@ async function changePassword() {
         return;
     }
 
-    if (password !== confirmPassword) {
+    if (password !== confirm) {
         message.style.color = "#DC2626";
         message.innerText = "Las contraseñas no coinciden.";
         return;
@@ -153,10 +153,13 @@ async function changePassword() {
     });
 
     if (error) {
-        message.style.color = "#16A34A";
-        message.innerText = "Contraseña actualizada correctamente.";
+        message.style.color = "#DC2626";
+        message.innerText = error.message;
         return;
     }
+
+    message.style.color = "#16A34A";
+    message.innerText = "Contraseña actualizada correctamente.";
 
 }
 
@@ -165,8 +168,8 @@ async function init() {
     const params = new URLSearchParams(fragment);
     const accessToken = params.get("access_token");
     const refreshToken = params.get("refresh_token");
-    console.log('!!!!!!!acces=' + accessToken);
-    console.log('!!!!!!!refresh=' + refreshToken);
+    //console.log('!!!!!!!acces=' + accessToken);
+    //console.log('!!!!!!!refresh=' + refreshToken);
 
     if (accessToken && refreshToken) {
 
@@ -176,7 +179,7 @@ async function init() {
                 refresh_token: refreshToken,
             });
     
-        if (error) {
+       if (error) {
             console.error(error);
             document.getElementById("message").innerText = error.message;
             return;
