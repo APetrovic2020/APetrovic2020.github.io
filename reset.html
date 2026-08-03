@@ -97,7 +97,7 @@ button:hover{
     alt="Mi Diario"
     class="logo">
 
-<h1>5 Mi Diario</h1> 
+<h1>6 Mi Diario</h1> 
 
 <div class="subtitle">
 Ingrese su nueva contraseña.
@@ -135,6 +135,7 @@ async function changePassword() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirm").value;
     const message = document.getElementById("message");
+    const button = document.getElementById("changePassword");
 
     if (password.length < 6) {
         message.style.color = "#DC2626";
@@ -148,6 +149,9 @@ async function changePassword() {
         return;
     }
 
+    button.disabled = true;
+    button.innerText = "Actualizando...";
+    
     const { error } = await supabaseClient.auth.updateUser({
         password: password
     });
@@ -155,11 +159,34 @@ async function changePassword() {
     if (error) {
         message.style.color = "#DC2626";
         message.innerText = error.message;
+        button.disabled = false;
+        button.innerText = "Cambiar contraseña";
         return;
     }
 
+    document.getElementById("password").style.display = "none";
+    document.getElementById("confirm").style.display = "none";
+    document.getElementById("changePassword").style.display = "none";
+    document.querySelector(".subtitle").style.display = "none";
+    
     message.style.color = "#16A34A";
-    message.innerText = "Contraseña actualizada correctamente.";
+
+    message.innerHTML = <h2>✅ Contraseña actualizada</h2>
+        <p>
+        Su contraseña fue cambiada correctamente.
+        </p>
+        
+        <p>
+        Ya puede volver a <b>Mi Diario</b> e iniciar sesión.
+        </p>
+        <button onclick="window.location.href='midiario://';">
+            Abrir Mi Diario
+        </button>
+    ;
+
+    message.innerHTML += <br><br>
+    <button id="openApp">Abrir Mi Diario</button>
+    ;
 
 }
 
@@ -185,7 +212,7 @@ async function init() {
             return;
         }
 
-        document.getElementById("message").innerText = "Sesión restaurada correctamente.";
+        //document.getElementById("message").innerText = "Sesión restaurada correctamente.";
     }
 }
 
