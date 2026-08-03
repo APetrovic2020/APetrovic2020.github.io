@@ -97,7 +97,7 @@ button:hover{
     alt="Mi Diario"
     class="logo">
 
-<h1>6 Mi Diario</h1> 
+<h1>7 Mi Diario</h1> 
 
 <div class="subtitle">
 Ingrese su nueva contraseña.
@@ -171,7 +171,7 @@ async function changePassword() {
     
     message.style.color = "#16A34A";
 
-    message.innerHTML = <h2>✅ Contraseña actualizada</h2>
+    message.innerHTML = "<h2>✅ Contraseña actualizada</h2>
         <p>
         Su contraseña fue cambiada correctamente.
         </p>
@@ -181,11 +181,11 @@ async function changePassword() {
         </p>
         <button onclick="window.location.href='midiario://';">
             Abrir Mi Diario
-        </button>
+        </button>"
     ;
 
-    message.innerHTML += <br><br>
-    <button id="openApp">Abrir Mi Diario</button>
+    message.innerHTML += "<br><br>
+    <button id="openApp">Abrir Mi Diario</button>"
     ;
 
 }
