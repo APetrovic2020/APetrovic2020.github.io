@@ -161,9 +161,12 @@ async function changePassword() {
     });
 
     if (error) {
-        alert(error.message);
         message.style.color = "#DC2626";
-        message.innerText = error.message;
+        if(error.message === 'Auth session missing!') {
+             message.innerText = "Sesión expirada.";
+        } else {
+            message.innerText = error.message;
+        }
         button.disabled = false;
         button.innerText = "Cambiar contraseña";
         return;
