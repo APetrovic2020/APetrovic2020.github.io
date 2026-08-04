@@ -161,7 +161,7 @@ async function changePassword() {
     });
 
     if (error) {
-        alert(error.code);
+        alert(error.message);
         message.style.color = "#DC2626";
         message.innerText = error.message;
         button.disabled = false;
