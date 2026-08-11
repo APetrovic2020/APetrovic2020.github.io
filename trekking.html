@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trekking · Mi Diario</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#E6F4FE;
+    color:#1E293B;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px 70px;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin-bottom:15px;
+}
+
+.header h1{
+    font-size:46px;
+    margin:5px 0 10px;
+    color:#208AEF;
+}
+
+.subtitle{
+    max-width:700px;
+    margin:auto;
+    color:#64748B;
+    font-size:19px;
+    line-height:1.7;
+}
+
+/* BACK BUTTON */
+
+.back{
+    display:inline-block;
+    margin-bottom:35px;
+    color:#208AEF;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back:hover{
+    text-decoration:underline;
+}
+
+/* ALBUMS */
+
+.albums{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.album{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.album:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.album-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.album-content{
+    padding:25px;
+}
+
+.album-content h2{
+    margin:0 0 8px;
+    color:#208AEF;
+    font-size:24px;
+}
+
+.album-info{
+    color:#64748B;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.album-description{
+    color:#475569;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.album-button{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:12px;
+    background:#208AEF;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.album-button:hover{
+    background:#1977CF;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:70px;
+    padding-top:25px;
+    border-top:1px solid #CFE5F5;
+    text-align:center;
+    color:#64748B;
+    font-size:14px;
+}
+
+.footer a{
+    color:#208AEF;
+    text-decoration:none;
+}
+
+.footer a:hover{
+    text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .container{
+        padding:30px 16px 50px;
+    }
+
+    .header{
+        margin-bottom:40px;
+    }
+
+    .header h1{
+        font-size:38px;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .album-image{
+        height:200px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <img
+            src="icon.png"
+            alt="Mi Diario"
+            class="logo">
+
+        <h1>Trekking</h1>
+
+        <div class="subtitle">
+            Caminar, descubrir nuevos lugares y disfrutar del camino.
+            Una colección de algunas de mis rutas y momentos favoritos.
+        </div>
+
+    </div>
+
+
+    <!-- VOLVER -->
+	<!--
+    <a
+        href="index.html"
+        class="back">
+        ← Volver a Mi Diario
+    </a>
+	-->
+
+    <!-- ALBUMES -->
+
+    <div class="albums">
+
+
+        <!-- ALBUM 1 -->
+
+        <div class="album">
+
+            <img
+                src="trekking/ruta-1.jpg"
+                alt="Ruta de trekking"
+                class="album-image">
+
+            <div class="album-content">
+
+                <h2>Cerro Pochoco</h2>
+
+                <div class="album-info">
+                    📍 Lugar · 2025 · 16 fotografías
+                </div>
+
+                <div class="album-description">
+                    Una breve descripción de la ruta,
+                    el paisaje y la experiencia.
+                </div>
+
+                <a
+                    href="https://www.canva.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="album-button">
+                    Ver álbum
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALBUM 2 -->
+		<!--
+        <div class="album">
+
+            <img
+                src="trekking/ruta-2.jpg"
+                alt="Ruta de trekking"
+                class="album-image">
+
+            <div class="album-content">
+
+                <h2>Otra ruta</h2>
+
+                <div class="album-info">
+                    📍 Lugar · 2024 · 14 fotografías
+                </div>
+
+                <div class="album-description">
+                    Una breve descripción de esta ruta
+                    y de los lugares recorridos.
+                </div>
+
+                <a
+                    href="https://www.canva.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="album-button">
+                    Ver álbum
+                </a>
+
+            </div>
+
+        </div>
+		-->
+
+
+        <!-- ALBUM 3 -->
+		<!-- 
+        <div class="album">
+
+            <img
+                src="trekking/ruta-3.jpg"
+                alt="Ruta de trekking"
+                class="album-image">
+
+            <div class="album-content">
+
+                <h2>Una tercera ruta</h2>
+
+                <div class="album-info">
+                    📍 Lugar · 2023 · 20 fotografías
+                </div>
+
+                <div class="album-description">
+                    Una pequeña historia sobre esta
+                    caminata y sus paisajes.
+                </div>
+
+                <a
+                    href="https://www.canva.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="album-button">
+                    Ver álbum
+                </a>
+
+            </div>
+
+        </div>
+		-->
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <!-- 
+		<div>
+            <a href="index.html">
+                Mi Diario
+            </a>
+            ·
+            <a href="privacy.html">
+                Política de Privacidad
+            </a>
+            ·
+            <a href="mailto:contacto@midiario.site">
+                Contacto
+            </a>
+        </div> 
+		-->
+
+        <p>
+            © 2026 Mi Diario · Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
